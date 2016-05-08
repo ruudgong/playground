@@ -7,7 +7,7 @@
 
 USER="gong"
 PASSWORD="password"
-OUTPUT="/tmp/athen-db-mysqldump"
+OUTPUT="/tmp/athena-db-mysqldump"
 date=$(date +%Y%m%d)
 
 if [[ ! -e $OUTPUT ]] ; then
