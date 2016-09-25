@@ -1,0 +1,82 @@
+#==============================================================================================
+# 1.	Introduction:
+#		This document provides step-by step guide to install Mule ESB.
+#
+# 2.	Server Info	
+#  		Host = optimus.smart.lab	
+#		IP	= 192.168.67.131
+#		OS	= CentOS 7 	
+# 3. Note – For complete details of supported platforms, please refer TO  
+#     MULEs documentation at http://www.mulesoft.org/documentation/display/current/Compatibility
+#
+#================================================================================================
+
+
+4.	##====== PREINSTALLATION REQUIREMENTS =========
+
+a.	Install Java Runtime/jdk1.7.0_60 (Java 1.6 & 1.7 is also supported)
+b.	Root access to host for installation & setup
+c.	Create a dedicated user for running Mule ESB.
+[root@optimus ~]# useradd -m -d /home/smart -s /bin/bash smart
+
+d.	Create following setting in login profile file for KSB system user. e.g. /home/smart/ksbprofile & add it to /home/smart/.bash_profile.
+
+export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.111-2.6.7.2.el7_2.x86_64
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
+export KSB_HOME=/opt/data/servers/mule/
+alias ksb="cd $KSB_HOME"
+alias ksblog="tail -50f $KSB_HOME/logs/mule_ee.log"
+alias ksbstart="$KSB_HOME/bin/mule start"
+alias ksbstop="$KSB_HOME/bin/mule stop"
+
+
+
+
+5.	##====== DOWNLOAD INSTALLABLE ==============
+
+a.	Go to https://www.mulesoft.com/platform/soa/mule-esb-open-source-esb
+b.	Download latest version of mule standalone
+c.	Move the installable file to the mule host (e.g. 192.168.67.131) 
+
+
+
+
+
+6.	##======= ISTALLATION STEPS  ===============
+
+a.	As the root user, unzip the installable into /opt/data/servers/mule/
+[root@optimus ~]# mkdir -p  /opt/data/servers/mule/
+[root@optimus ~]# tar xvf mule-enterprise-standalone-3.8.1.tar.gz -C /opt/data/server/mule --strip-components=1
+
+b.	Change ownership of the Mule ESB installation to smart user.
+[root@optimus ~]# chown -R smart:smart /opt/data/server/mule/
+[root@optimus ~]# chmod 755 -R /opt/data/server/mule/
+
+
+
+
+
+7.	##======= EXTRA CONFIGURATION =============
+
+a.	JVM memory setting for mule can be modified by updating wrapper.conf file present at KSB_HOME/conf/wrapper.conf
+Set following JVM parameters.
+[root@optimus ~]# vim KSB_HOME/conf/wrapper.conf
+
+# set JVM properties
+* wrapper.java.additional.4=-Xmx2048m
+* wrapper.java.additional.5=-Xms256m
+#wrapper.java.additional.6=-XX:MaxPermSize=512m
+#Change maxmemory setting to 0
+* wrapper.java.maxmemory=0
+
+
+
+
+8.    ##=========  MAITENANCE ======================
+from the alias we set earlier, you may run these commands to start or stop MULE.  
+
+[smart@optimus ~]$ KSB_HOME/bin/mule start  or ksbstart
+[smart@optimus ~]$ KSB_HOME/bin/mule stop or ksbstop
+[smart@optimus ~]$ KSB_HOME/log/mule.log (alias ksblog)
+
