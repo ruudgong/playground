@@ -46,7 +46,7 @@ c.	Move the installable file to the mule host (e.g. 192.168.67.131)
 6.	##======= ISTALLATION STEPS  ===============
 
 a.	As the root user, unzip the installable into /opt/data/servers/mule/
-[root@optimus ~]# mkdir -p  /opt/data/servers/mule/
+[root@optimus ~]# mkdir -p  /opt/data/server/mule/
 [root@optimus ~]# tar xvf mule-enterprise-standalone-3.8.1.tar.gz -C /opt/data/server/mule --strip-components=1
 
 b.	Change ownership of the Mule ESB installation to smart user.
