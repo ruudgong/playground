@@ -1,11 +1,26 @@
-#####################################################
-# This script is designed to backup mysql databse
-#
-########################################################
-
 #!/bin/bash
+#===============================================================================
+#
+#          FILE: backupdb.sh
+#
+#         USAGE: ./backupdb.sh
+#
+#  DESCRIPTION: This is script is designed to backup database
+#                This file could be run on a daily or weekly basis as a cronjob
+#       OPTIONS: No option is required
+#  THE SCRIPT DO:
+#                 create a directory, dump database to the directory, compres the sql dump file(s)
+#				  and removes all existing .sql & .gz file thats are +30 day old.                                                   
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Smart Nwachukwu, smart.nwachukwu@gmail.com
+#  ORGANIZATION: 
+#       CREATED: 04/24/2016 
+#      REVISION: 03
+#===============================================================================
 
-USER="gong"
+USER="root"
 PASSWORD="password"
 OUTPUT="/tmp/athena-db-mysqldump"
 date=$(date +%Y%m%d)
@@ -31,4 +46,3 @@ for db in $databases; do
 done
 
 tar -czf "$OUTPUT/athena-mysqldump-$date.tgz" $OUTPUT/*.sql 2>/dev/null
-
