@@ -5,12 +5,12 @@
 #
 #         USAGE: ./backupdb.sh
 #
-#  DESCRIPTION: This is script is designed to backup database
-#                This file could be run on a daily or weekly basis as a cronjob
-#       OPTIONS: No option is required
+#  DESCRIPTION: This script is designed to backup database
+#               It could be run on a daily or weekly basis as a cronjob
+#       OPTIONS: No options are required
 #  THE SCRIPT DO:
 #                 create a directory, dump database to the directory, compres the sql dump file(s)
-#				  and removes all existing .sql & .gz file thats are +30 day old.                                                   
+#		  and removes all existing .sql & .gz file thats are +30 day old.                                                   
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
