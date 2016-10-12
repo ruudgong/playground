@@ -6,7 +6,7 @@
 ##         USAGE: ./cryptpass.pl
 ##
 ##   DESCRIPTION:This script generates an encrypted password string for a given plaintext and salt                  
-##       OPTIONS: No option is required                             
+##       OPTIONS:                              
 ##				                                                     
 ##  REQUIREMENTS: ---
 ##          BUGS: ---
