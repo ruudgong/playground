@@ -5,7 +5,7 @@
 #
 #         USAGE: ./rootpass.sh
 #
-#       OPTIONS: No option is required
+#       OPTIONS: 
 #   DESCRIPTION:This script will accept a single server (presumably for
 #               testing), a text list (CR delimited), or LDAP search for OES servers
 #               to reset root password on multiple servers in your network.
