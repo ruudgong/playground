@@ -14,7 +14,7 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Smart Nwachukwu, smart.nwachukwu@gmail.com
+#        AUTHOR: Smart Nwachukwu  <smart.nwachukwu@gmail.com>
 #  ORGANIZATION: 
 #       CREATED: 04/24/2016 
 #      REVISION: 03
@@ -22,7 +22,7 @@
 
 USER="root"
 PASSWORD="password"
-OUTPUT="/tmp/athena-db-mysqldump"
+OUTPUT="/tmp/athena-db-sqldump"
 date=$(date +%Y%m%d)
 
 if [[ ! -e $OUTPUT ]] ; then
