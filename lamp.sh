@@ -1,8 +1,21 @@
 #!/bin/bash
-# ========================================
-# Program: LAMP Stack Installation Script
-# Date: 09-05-2016
-# =======================================
+#===============================================================================
+#
+#          FILE: lamp.sh
+#
+#         USAGE: ./lamp.sh
+#
+#  DESCRIPTION: This will install lampstack on Debian and Redhat Distro v6 and less 
+#                
+#       OPTIONS: No option is required
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Smart Nwachukwu <smart.nwachukwu@gmail.com>
+#  ORGANIZATION: 
+#       CREATED: 09/05/2016 
+#      REVISION: 03
+#===============================================================================
 
 if [ "`lsb_release -is`" == "Ubuntu" ] || [ "`lsb_release -is`" == "Debian" ]
 then
