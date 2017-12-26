@@ -21,14 +21,9 @@ c.	Create a dedicated user for running Mule ESB.
 
 d.	Create following setting in login profile file for KSB system user. e.g. /home/smart/ksbprofile & add it to /home/smart/.bash_profile.
 
-export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.111-2.6.7.2.el7_2.x86_64
-PATH=$JAVA_HOME/bin:$PATH
-export PATH
-export KSB_HOME=/opt/data/servers/mule/
-alias ksb="cd $KSB_HOME"
-alias ksblog="tail -50f $KSB_HOME/logs/mule_ee.log"
-alias ksbstart="$KSB_HOME/bin/mule start"
-alias ksbstop="$KSB_HOME/bin/mule stop"
+JAVA_HOME=/data/app/jdk1.8
+export JAVA_HOME
+export PATH=$JAVA_HOME/bin:$PATH
 
 
 
@@ -45,13 +40,13 @@ c.	Move the installable file to the mule host (e.g. 192.168.67.131)
 
 6.	##======= ISTALLATION STEPS  ===============
 
-a.	As the root user, unzip the installable into /opt/data/servers/mule/
-[root@optimus ~]# mkdir -p  /opt/data/server/mule/
-[root@optimus ~]# tar xvf mule-enterprise-standalone-3.8.1.tar.gz -C /opt/data/server/mule --strip-components=1
+a.	As the root user, unzip the installable into /data/servers/mule/
+[root@optimus ~]# mkdir -p  /data/server/mule/
+[root@optimus ~]# tar xvf mule-enterprise-standalone-3.8.1.tar.gz -C /data/server/mule --strip-components=1
 
 b.	Change ownership of the Mule ESB installation to smart user.
-[root@optimus ~]# chown -R smart:smart /opt/data/server/mule/
-[root@optimus ~]# chmod 755 -R /opt/data/server/mule/
+[root@optimus ~]# chown -R smart:smart /data/server/mule/
+[root@optimus ~]# chmod 755  /data/server/mule/
 
 
 
@@ -61,7 +56,7 @@ b.	Change ownership of the Mule ESB installation to smart user.
 
 a.	JVM memory setting for mule can be modified by updating wrapper.conf file present at KSB_HOME/conf/wrapper.conf
 Set following JVM parameters.
-[root@optimus ~]# vim KSB_HOME/conf/wrapper.conf
+[root@optimus ~]# vim MULE_HOME/conf/wrapper.conf
 
 # set JVM properties
 * wrapper.java.additional.4=-Xmx2048m
@@ -73,10 +68,4 @@ Set following JVM parameters.
 
 
 
-8.    ##=========  MAITENANCE ======================
-from the alias we set earlier, you may run these commands to start or stop MULE.  
-
-[smart@optimus ~]$ KSB_HOME/bin/mule start  or ksbstart
-[smart@optimus ~]$ KSB_HOME/bin/mule stop or ksbstop
-[smart@optimus ~]$ KSB_HOME/log/mule.log (alias ksblog)
 
