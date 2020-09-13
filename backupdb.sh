@@ -14,7 +14,7 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Smart Nwachukwu  <smart.nwachukwu@gmail.com>
+#        AUTHOR: ruudgong
 #  ORGANIZATION: 
 #       CREATED: 04/24/2016 
 #      REVISION: 03

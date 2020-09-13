@@ -5,14 +5,14 @@
 #
 #         USAGE: ./restart-apache.sh
 #
-#   DESCRIPTION: This script will bounce apache if it's not running. this can be set 
-#                as cronjob or event handler in a monitoring tool like Nagios                 
+#   DESCRIPTION: This script will bounce apache if it's not running, this can be set 
+#                as a cronjob or event handler in a monitoring tool like Nagios                 
 #       OPTIONS:                             
 #				                                                     
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#		 Author: Smart Nwachukwu <smart.nwachukwu@gmail.com>
+#		 Author: ruudgong
 #       UPDATED: 
 #  ORGANIZATION: 
 #       CREATED:  
