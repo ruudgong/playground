@@ -1,6 +1,5 @@
 #!/bin/bash
 #===============================================================================
-#
 #          FILE: restart-apache.sh 
 #
 #         USAGE: ./restart-apache.sh
@@ -17,8 +16,6 @@
 #  ORGANIZATION: 
 #       CREATED:  
 #      REVISION: 
-#
-#
 #===============================================================================
 
 RESTART="/sbin/service httpd restart"
