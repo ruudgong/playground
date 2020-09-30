@@ -2,9 +2,9 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE: Zapper-compress.sh
+#          FILE: file-compress.sh
 #
-#         USAGE: ./Zapper-compress.sh
+#         USAGE: ./file-compress.sh
 #
 #   DESCRIPTION: This is used to compress files in place it is meant to be an emergency measure and protect data integrerty.
 #
