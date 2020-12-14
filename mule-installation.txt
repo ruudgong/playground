@@ -3,8 +3,8 @@
 #		This document provides step-by step guide to install Mule ESB.
 #
 # 2.	Server Info	
-#  		Host = optimus.smart.lab	
-#		IP	= 192.168.67.131
+#  		Host = optimus	
+#		IP	= 192.168.x.x 
 #		OS	= CentOS 7 	
 # 3.    Note – For complete details of supported platforms, please refer TO  
 #       MULEs documentation at http://www.mulesoft.org/documentation/display/current/Compatibility
@@ -37,17 +37,14 @@ c.	Move the installable file to the mule host (e.g. 192.168.67.131)
 
 
 
-
-
-6.	#ISTALLATION STEPS 
-a.	As the root user, unzip the installable into /data/servers/mule/
+6.	#ISTALLATION STEPS: 
+a.	As root user, untar the installable into /data/servers/mule/
 [root@optimus ~]# mkdir -p  /data/server/mule/
 [root@optimus ~]# tar xvf mule-enterprise-standalone-3.8.1.tar.gz -C /data/server/mule --strip-components=1
 
 b.	Change ownership of the Mule ESB installation to ruudgong user.
 [root@optimus ~]# chown -R ruudgong:ruudgong /data/server/mule/
 [root@optimus ~]# chmod 755  /data/server/mule/
-
 
 
 
