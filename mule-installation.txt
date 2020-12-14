@@ -12,13 +12,13 @@
 #================================================================================================
 
 
-4.	##====== PREINSTALLATION REQUIREMENTS =========
+4. #PREINSTALLATION REQUIREMENTS 
 
 a.	Install Java Runtime/jdk1.8 (Java 1.6 & 1.7 is also supported)
 b.	Root access to host for installation & setup
 c.	Create a dedicated user for running Mule ESB.
 
-[root@optimus ~]# useradd -m -d /home/ruudgong -s /bin/bash ruudgong
+[root@optimus ~]# useradd ruudgong 
 
 d.	Create following setting in login profile file for KSB system user. e.g. /home/ruudgong/ksbprofile & add it to /home/ruudgong/.bash_profile.
 
@@ -29,7 +29,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 
 
-5.	##====== DOWNLOAD INSTALLABLE ==============
+5.	#DOWNLOAD INSTALLABLE 
 
 a.	Go to https://www.mulesoft.com/platform/soa/mule-esb-open-source-esb
 b.	Download latest version of mule standalone
@@ -39,8 +39,7 @@ c.	Move the installable file to the mule host (e.g. 192.168.67.131)
 
 
 
-6.	##======= ISTALLATION STEPS  ===============
-
+6.	#ISTALLATION STEPS 
 a.	As the root user, unzip the installable into /data/servers/mule/
 [root@optimus ~]# mkdir -p  /data/server/mule/
 [root@optimus ~]# tar xvf mule-enterprise-standalone-3.8.1.tar.gz -C /data/server/mule --strip-components=1
@@ -53,10 +52,10 @@ b.	Change ownership of the Mule ESB installation to ruudgong user.
 
 
 
-7.	##======= EXTRA CONFIGURATION =============
-
+7.	#EXTRA CONFIGURATION
 a.	JVM memory setting for mule can be modified by updating wrapper.conf file present at MULE_HOME/conf/wrapper.conf
 Set following JVM parameters.
+
 [root@optimus ~]# vim MULE_HOME/conf/wrapper.conf
 
 # set JVM properties
