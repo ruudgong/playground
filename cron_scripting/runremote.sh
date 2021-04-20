@@ -35,8 +35,7 @@ done
 wait
 
 cat $OUTLOG.*
-#cat $OUTLOG.* | mail -s "TV Services " maprisaca@k12.com
-#scp $OUTLOG.* tc10:/tmp/test/.
+#cat $OUTLOG.* | mail -s "Output Message" me@email.com
 
 
 #cat $ERRLOG.* >&2
