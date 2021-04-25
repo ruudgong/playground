@@ -73,7 +73,7 @@ echo ""
 
 
 
-=====================versio updtate==========================
+=====================version updtate==========================
 echo "*** Loading bin/setenv.sh"
 if [ -e $(dirname $0)/appenv.sh ] && [ -r $(dirname $0)/appenv.sh ]
 then
