@@ -66,3 +66,21 @@ do
 done
 echo "_______________________________________________"
 echo ""
+
+
+
+
+
+
+
+=====================version updtate==========================
+echo "*** Loading bin/setenv.sh"
+if [ -e $(dirname $0)/appenv.sh ] && [ -r $(dirname $0)/appenv.sh ]
+then
+        source $(dirname $0)/appenv.sh
+else
+   echo -e "\n*** Warning: Script appenv.sh is missing!! \n"
+fi
+JAVA_HOME=/data/app/jdk1.8
+echo "CATALINA_OPTS: $CATALINA_OPTS"
+echo "** setenv.sh loaded **"
