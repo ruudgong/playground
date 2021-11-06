@@ -1,0 +1,44 @@
+---
+
+- hosts: all
+  sudo: true
+
+  tasks:
+
+  - name: Install the EPEL yum repo
+    yum: name=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm state=present
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+  - name: Install the Famillecollet yum repo
+    yum: name=http://rpms.famillecollet.com/enterprise/remi-release-6.rpm state=present
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+  - name: Install Nagios/NRPE on RHEL/CentOS
+    yum: name={{item}} state=present
+    with_items:
+      - libselinux-python
+      - nagios 
+      - nagios-plugins-all 
+      - nrpe 
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+
+  - name: Install Nagios/NRPE on Debian/Ubuntu
+    apt: name={{item}} update_cache=yes state=present
+    with_items:
+      - nagios-nrpe-server
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+
+  - name: Copy the nagios client template
+    template: src=nrpe.conf dest=/etc/nagios/nrpe.conf
+
+  - name: Configure NRPE
+    lineinfile: dest="/etc/nagios/nrpe.cfg" regexp='(^allowed_hosts=(([a-zA-Z0-9.]*)(?!,10\.0\.0\.8)))$' line='\1,10.0.0.0/24' backrefs=True state=present
+
+  - name: Turn on NRPE
+    service: name=nrpe enabled=yes state=started
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+  - name: Turn on NRPE (Ubuntu)
+    service: name=nagios-nrpe-server enabled=yes state=started
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'

@@ -1,0 +1,47 @@
+---
+
+- hosts: nagios
+  sudo: true
+  
+  tasks:
+
+  - name: Install the EPEL repo
+    yum: name=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
+  - name: Install the Famillecollet repo
+    yum: name=http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+  - name: Install Nagios/NRPE
+    yum: name={{item}} state=present
+    with_items:
+      - libselinux-python
+      - nagios 
+      - nagios-plugins-all 
+      - nagios-plugins-nrpe
+      - nrpe
+      - php
+      - httpd
+      - python-passlib
+
+  - name: Start Apache
+    service: name=httpd enabled=yes
+
+  - name: Set the Nagios admin password
+    htpasswd: name="nagiosadmin" password="nagiosadmin" path=/etc/nagios/passwd
+
+  - name: Configure Nagios
+    lineinfile: dest="/etc/nagios/nagios.cfg" line='cfg_dir=/etc/nagios/servers' state=present
+
+  - replace: dest="/etc/nagios/objects/localhost.cfg" regexp='localhost' replace='nagios.cspire.net'
+
+  - name: Copy the Nagios client configs
+    copy: src=servers/ dest=/etc/nagios/servers/
+
+  - name: Configure NRPE
+    lineinfile: dest="/etc/nagios/nrpe.cfg" regexp='(^allowed_hosts=(([a-zA-Z0-9.]*)(?!,10\.0\.0\.8)))$' line='\1,10.0.0.0/24' backrefs=True state=present
+
+  - name: Turn on NRPE
+    service: name=nrpe enabled=yes
+
+  - name: Restart Nagios
+    service: name=nagios enabled=yes state=restarted
