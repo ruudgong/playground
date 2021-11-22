@@ -1,0 +1,77 @@
+Outputs:
+# Export VPC ID
+  VPC:
+    Description: 
+    Export:
+      Name:
+    Value:
+
+# Export Public Subnet 1 
+  PublicSubnet1:
+    Description:
+    Export:
+      Name:
+    Value:
+
+# Export Public Subnet 2
+  PublicSubnet2:
+    Description:
+    Export:
+      Name:
+    Value:
+
+# Export Private Subnet 1
+  PrivateSubnet1:
+    Description:
+    Export:
+      Name: 
+    Value:
+
+# Export Private Subnet 2
+  PrivateSubnet2:
+    Description: 
+    Export:
+      Name:
+    Value:
+
+# Export Private Subnet 3
+  PrivateSubnet3:
+    Description:
+    Export:
+      Name:
+    Value:
+
+# Export Private Subnet 4
+  PrivateSubnet4:
+    Description:
+    Export:
+      Name:
+    Value:
+
+# Export ALB Security Group ID
+  ALBSecurityGroup:
+    Description:
+    Export:
+      Name:
+    Value:
+
+# Export SSH Security Group ID
+  SSHSecurityGroup:
+    Description:
+    Export:
+      Name: 
+    Value:
+
+# Export WebServer Security Group ID
+  WebServerSecurityGroup:
+    Description:
+    Export:
+      Name:
+    Value:
+
+# Export DataBase Security Group ID
+  DataBaseSecurityGroup:
+    Description:
+    Export:
+      Name:
+    Value:

@@ -1,0 +1,202 @@
+Resources:
+# Create VPC
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 
+      EnableDnsHostnames: 
+      EnableDnsSupport: 
+      InstanceTenancy: 
+      Tags:
+        - Key: 
+          Value: 
+
+# Create Internet Gateway
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: 
+          Value: 
+
+# Attach Internet Gateway to VPC
+  InternetGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      InternetGatewayId: 
+      VpcId: 
+
+# Create Public Subnet1
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: 
+      CidrBlock:
+      MapPublicIpOnLaunch:
+      Tags:
+        - Key: 
+          Value: 
+      VpcId:
+
+# Create Public Subnet2
+  PublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+      CidrBlock:
+      MapPublicIpOnLaunch:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Route Table
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: 
+          Value:
+      VpcId:
+
+# Add a Public Route to the Route Table
+  PublicRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      DestinationCidrBlock:
+      GatewayId:
+      RouteTableId:
+
+# Associate Public Subnet1 with Public Route Table
+  PublicSubnet1RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+      SubnetId:
+
+# Associate Public Subnet2 with Public Route Table
+  PublicSubnet2RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+      SubnetId:
+
+# Create Private Subnet1
+  PrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: 
+      CidrBlock: 
+      MapPublicIpOnLaunch:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Private Subnet2
+  PrivateSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+      CidrBlock:
+      MapPublicIpOnLaunch:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Private Subnet3
+  PrivateSubnet3:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+      CidrBlock:
+      MapPublicIpOnLaunch:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Private Subnet4
+  PrivateSubnet4:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+      CidrBlock: 
+      MapPublicIpOnLaunch:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Security Group for the Application Load Balancer 
+  ALBSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: 
+      SecurityGroupIngress:
+        - IpProtocol: 
+          FromPort:
+          ToPort:
+          CidrIp:
+        - IpProtocol:
+          FromPort:
+          ToPort:
+          CidrIp:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Security Group for the Bastion Host aka Jump Box
+  SSHSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription:
+      SecurityGroupIngress:
+        - IpProtocol:
+          FromPort:
+          ToPort:
+          CidrIp:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Security Group for the Web Server
+  WebServerSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription:
+      SecurityGroupIngress:
+        - IpProtocol:
+          FromPort: 
+          ToPort: 
+          SourceSecurityGroupId:
+        - IpProtocol:
+          FromPort:
+          ToPort:
+          SourceSecurityGroupId:
+        - IpProtocol:
+          FromPort:
+          ToPort:
+          SourceSecurityGroupId:
+      Tags:
+        - Key:
+          Value:
+      VpcId:
+
+# Create Security Group for the DataBase
+  DataBaseSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription:
+      SecurityGroupIngress:
+        - IpProtocol:
+          FromPort:
+          ToPort:
+          SourceSecurityGroupId:
+      Tags:
+        - Key:
+          Value:
+      VpcId:

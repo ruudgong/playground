@@ -1,0 +1,35 @@
+Parameters:
+  VpcCIDR:
+    Default:
+    Description:
+    Type:
+
+  PublicSubnet1CIDR:
+    Default:
+    Description:
+    Type:
+
+  PublicSubnet2CIDR:
+    Default:
+    Description:
+    Type:
+
+  PrivateSubnet1CIDR:
+    Default:
+    Description:
+    Type:
+
+  PrivateSubnet2CIDR:
+    Default:
+    Description:
+    Type:
+
+  PrivateSubnet3CIDR:
+    Default:
+    Description:
+    Type:
+
+  PrivateSubnet4CIDR:
+    Default:
+    Description:
+    Type:
