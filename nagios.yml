@@ -32,7 +32,7 @@
   - name: Configure Nagios
     lineinfile: dest="/etc/nagios/nagios.cfg" line='cfg_dir=/etc/nagios/servers' state=present
 
-  - replace: dest="/etc/nagios/objects/localhost.cfg" regexp='localhost' replace='nagios.cspire.net'
+  - replace: dest="/etc/nagios/objects/localhost.cfg" regexp='localhost' replace='nagios.test.net'
 
   - name: Copy the Nagios client configs
     copy: src=servers/ dest=/etc/nagios/servers/
