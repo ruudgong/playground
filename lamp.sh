@@ -14,7 +14,7 @@
 #        AUTHOR: ruudgong
 #  ORGANIZATION: 
 #       CREATED: 09/05/2016 
-#      REVISION: 03
+#      REVISION: 02
 #===============================================================================
 
 if [ "`lsb_release -is`" == "Ubuntu" ] || [ "`lsb_release -is`" == "Debian" ]
