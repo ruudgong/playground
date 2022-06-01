@@ -1,0 +1,25 @@
+# https://youtu.be/63jObzufz9Q
+
+How to Deploy a WordPress Website on AWS
+
+How to Create a VPC with Public and Private Subnets
+
+How to Create a NAT Gateway in AWS
+
+How to Control Traffic with Security Groups in AWS
+
+How to Create a MYSQL Database In AWS
+
+How to Create an EFS in AWS
+
+Mount nfs4 Failed to Resolve Server
+
+How to Install WordPress and Move Files to EFS (Updated)
+
+How to Create an Application Load Balancer
+
+How to Register a Domain Name in Route53
+
+How to Point Domain Name to AWS Application Load Balancer
+
+How to SSH/Connect to EC2 Instances in the Private Subne
