@@ -33,7 +33,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 a.	Go to https://www.mulesoft.com/platform/soa/mule-esb-open-source-esb
 b.	Download latest version of mule standalone
-c.	Move the installable file to the mule host (e.g. 192.168.67.131) 
+c.	Move the installable file to the mule host (e.g. 192.168.67.132) 
 
 
 
