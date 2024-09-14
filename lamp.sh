@@ -39,5 +39,5 @@ then
     sudo chkconfig mysqld on;
 
 else
-    echo "Unsupported Operating System";
+    echo "Unsupported Operating System OS";
 fi
